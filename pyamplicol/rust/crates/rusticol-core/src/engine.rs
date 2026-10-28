@@ -4717,6 +4717,21 @@ use evaluation::resolved_f64_totals;
 #[cfg(any(feature = "f64-compiled", feature = "f64-symjit"))]
 mod compiled_direct_prototype;
 mod helicity_lane;
+#[cfg(all(
+    feature = "pacman",
+    any(feature = "f64-compiled", feature = "f64-symjit")
+))]
+mod pacman_capture;
+#[cfg(all(
+    feature = "pacman",
+    any(feature = "f64-compiled", feature = "f64-symjit")
+))]
+mod pacman_runner;
+#[cfg(all(
+    feature = "tile-override",
+    any(feature = "f64-compiled", feature = "f64-symjit")
+))]
+mod tile_override;
 use helicity_lane::*;
 mod momentum;
 use momentum::*;
